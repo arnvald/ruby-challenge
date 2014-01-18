@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Issues Challenge</title>
+    <style>
+      .issues { width: 300px; float: left; }
+      .issue { border: 1px solid black; padding: 5px; }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="content">
+        <div class="issues" id="backlog">
+          <h2>Backlog</h2>
+          <%= erb :_issues, locals: {issues: @issues[:backlog]} %>
+        </div>
+        <div class="issues" id="doing">
+          <h2>In progress</h2>
+          <%= erb :_issues, locals: {issues: @issues[:doing]} %>
+        </div>
+        <div class="issues" id="done">
+          <h2>Done</h2>
+          <%= erb :_issues, locals: {issues: @issues[:done]} %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
